@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HowActivity"
+    tools:ignore="MissingConstraints">
+
+    <!-- 설명 이미지 -->
+    <ImageView
+        android:id="@+id/howto_01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/howto_01"/>
+
+    <ImageView
+        android:id="@+id/howto_02"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/howto_02"/>
+
+    <ImageView
+        android:id="@+id/howto_03"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/howto_03"/>
+
+    <ImageView
+        android:id="@+id/howto_04"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/howto_04"/>
+
+    <ImageView
+        android:id="@+id/howto_05"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/howto_05"/>
+
+    <ImageView
+        android:id="@+id/howto_06"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/howto_06"/>
+
+    <ImageView
+        android:id="@+id/howto_07"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/howto_07"/>
+
+    <!-- 이전 페이지 -->
+    <ImageView
+        android:id="@+id/previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/interface_how_01"
+        android:layout_marginTop="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="setPrevious"/>
+
+    <!-- 다음 페이지 -->
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/interface_how_02"
+        android:layout_marginTop="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="setNext"/>
+
+    <!-- 메인 화면으로 이동 -->
+    <TextView
+        android:id="@+id/exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/interface_how_exit"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:onClick="toTitle"
+        android:text="EXIT"
+        android:textColor="#e18040"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

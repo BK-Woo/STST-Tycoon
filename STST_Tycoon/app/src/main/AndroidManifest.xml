@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.stst_tycoon">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_stst_tycoon"
+        android:roundIcon="@mipmap/ic_stst_tycoon_round"
+        android:label="소떡소떡 타이쿤"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".GameActivity" />
+        <activity android:name=".HowActivity"></activity>
+    </application>
+
+</manifest>

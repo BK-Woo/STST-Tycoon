@@ -1,0 +1,1332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#052c46"
+    android:id="@+id/GameLayout"
+    tools:context=".GameActivity"
+    tools:ignore="MissingConstraints">
+
+    <!-- 배경 -->
+    <FrameLayout
+        android:id="@+id/BackgroundLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/LayerFar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:adjustViewBounds="true"
+            android:paddingBottom="60dp"
+            app:srcCompat="@drawable/layer_far_buildings" />
+
+        <ImageView
+            android:id="@+id/LayerBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:adjustViewBounds="true"
+            android:paddingBottom="20dp"
+            app:srcCompat="@drawable/layer_back_buildings" />
+
+        <ImageView
+            android:id="@+id/LayerForeground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:adjustViewBounds="true"
+            android:paddingLeft="-1dp"
+            android:paddingRight="-1dp"
+            app:srcCompat="@drawable/layer_foreground" />
+    </FrameLayout>
+
+    <!-- 손님 -->
+    <ImageView
+        android:id="@+id/Guest_Blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:src="@drawable/anim_guest_blue"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="giveMenu_01" />
+
+    <ImageView
+        android:id="@+id/Guest_Green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:src="@drawable/anim_guest_green"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="giveMenu_02" />
+
+    <ImageView
+        android:id="@+id/Guest_Red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:src="@drawable/anim_guest_red"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="giveMenu_03" />
+
+    <ImageView
+        android:id="@+id/Guest_Yellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:src="@drawable/anim_guest_yellow"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="giveMenu_04"/>
+
+    <TextView
+        android:id="@+id/Guest_Blue_Timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="30"
+        android:background="#80000000"
+        android:textColor="#e18040"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/Guest_Green_Timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Green"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="30"
+        android:background="#80000000"
+        android:textColor="#e18040"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/Guest_Red_Timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Red"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="30"
+        android:background="#BF000000"
+        android:textColor="#e18040"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/Guest_Yellow_Timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="30"
+        android:background="#80000000"
+        android:textColor="#e18040"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/Guest_Blue_Menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Blue_Timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="5"
+        android:background="#80000000"
+        android:textColor="#e18040"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:id="@+id/Guest_Green_Menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Green_Timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="5"
+        android:background="#BF000000"
+        android:textColor="#e18040"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:id="@+id/Guest_Red_Menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Red_Timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="5"
+        android:background="#80000000"
+        android:textColor="#e18040"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:id="@+id/Guest_Yellow_Menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Yellow_Timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="5"
+        android:background="#80000000"
+        android:textColor="#e18040"
+        android:textSize="24dp"/>
+
+    <ImageView
+        android:id="@+id/Guest_Blue_Arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Blue_Menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        app:srcCompat="@drawable/anim_arrow"
+        android:onClick="giveMenu_01"/>
+
+    <ImageView
+        android:id="@+id/Guest_Green_Arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Green_Menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        app:srcCompat="@drawable/anim_arrow"
+        android:onClick="giveMenu_02"/>
+
+    <ImageView
+        android:id="@+id/Guest_Red_Arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Red_Menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        app:srcCompat="@drawable/anim_arrow"
+        android:onClick="giveMenu_03"/>
+
+    <ImageView
+        android:id="@+id/Guest_Yellow_Arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/Guest_Yellow_Menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        app:srcCompat="@drawable/anim_arrow"
+        android:onClick="giveMenu_04"/>
+
+    <!-- 게임 창 -->
+    <RelativeLayout
+        android:id="@+id/InterfaceGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#2a1723"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/interface_game"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/interface_game_inner"/>
+    </RelativeLayout>
+
+    <!-- 소스 사용 가능 시간 표시-->
+    <TableRow
+        android:id="@+id/InterfaceGame_Timer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceGame_Menu">
+
+        <TextView
+            android:id="@+id/Timer_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="#e18040"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/Timer_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="#e18040"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/Timer_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="#e18040"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/Timer_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="#e18040"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/Timer_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="17dp"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="#e18040"
+            android:textSize="16dp"/>
+    </TableRow>
+
+    <!-- 게임 창 꼬치 세팅-->
+    <TableRow
+        android:id="@+id/InterfaceGame_Menu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceLower"
+        app:layout_constraintTop_toTopOf="@+id/InterfaceGame">
+
+        <RelativeLayout
+            android:id="@+id/Position_01"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:onClick="setStick_01"
+                android:scaleType="fitEnd"
+                android:src="@drawable/game_button" />
+
+            <ImageView
+                android:id="@+id/ricecake_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/sausage_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/ketchup_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:paddingRight="30dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/ketchup" />
+
+            <ImageView
+                android:id="@+id/mustard_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:paddingLeft="30dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/mustard" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Position_02"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_button"
+                android:onClick="setStick_02" />
+
+            <ImageView
+                android:id="@+id/ricecake_07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/sausage_07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/ketchup_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:paddingRight="30dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/ketchup" />
+
+            <ImageView
+                android:id="@+id/mustard_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:paddingLeft="30dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/mustard" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Position_03"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_button"
+                android:onClick="setStick_03" />
+
+            <ImageView
+                android:id="@+id/ricecake_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/sausage_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/ketchup_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:paddingRight="30dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/ketchup" />
+
+            <ImageView
+                android:id="@+id/mustard_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:paddingLeft="30dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/mustard" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Position_04"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_button"
+                android:onClick="setStick_04" />
+
+            <ImageView
+                android:id="@+id/ricecake_19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/sausage_19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/ketchup_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:paddingRight="30dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/ketchup" />
+
+            <ImageView
+                android:id="@+id/mustard_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:paddingLeft="30dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/mustard" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Position_05"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart"
+                android:src="@drawable/game_button"
+                android:onClick="setStick_05" />
+
+            <ImageView
+                android:id="@+id/ricecake_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/ricecake_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ricecake"/>
+
+            <ImageView
+                android:id="@+id/sausage_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/sausage_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sausage"/>
+
+            <ImageView
+                android:id="@+id/ketchup_05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:paddingRight="30dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/ketchup" />
+
+            <ImageView
+                android:id="@+id/mustard_05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:paddingLeft="30dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/mustard" />
+        </RelativeLayout>
+    </TableRow>
+
+    <!-- 소스 사용 가능 시간 표시-->
+    <TableRow
+        android:id="@+id/InterfaceGame_Trash"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceLower">
+
+        <ImageView
+            android:id="@+id/Trash_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:adjustViewBounds="true"
+            android:maxHeight="30dp"
+            android:background="#66000000"
+            android:src="@drawable/bin"
+            android:onClick="setEmpty_01"/>
+
+        <ImageView
+            android:id="@+id/Trash_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:adjustViewBounds="true"
+            android:maxHeight="30dp"
+            android:background="#66000000"
+            android:src="@drawable/bin"
+
+            android:onClick="setEmpty_02"/>
+
+        <ImageView
+            android:id="@+id/Trash_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:adjustViewBounds="true"
+            android:maxHeight="30dp"
+            android:background="#66000000"
+            android:src="@drawable/bin"
+            android:onClick="setEmpty_03"/>
+
+        <ImageView
+            android:id="@+id/Trash_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:adjustViewBounds="true"
+            android:maxHeight="30dp"
+            android:background="#66000000"
+            android:src="@drawable/bin"
+            android:onClick="setEmpty_04" />
+
+        <ImageView
+            android:id="@+id/Trash_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:adjustViewBounds="true"
+            android:maxHeight="30dp"
+            android:background="#66000000"
+            android:src="@drawable/bin"
+            android:onClick="setEmpty_05"/>
+    </TableRow>
+
+    <!-- 게임 창 인터페이스 (좌, MENU) -->
+    <RelativeLayout
+        android:id="@+id/InterfaceGame_Side_Left"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceLower"
+        app:layout_constraintTop_toTopOf="@+id/InterfaceGame">
+
+        <ImageView
+            android:id="@+id/side_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/interface_game_side" />
+
+        <ImageView
+            android:id="@+id/menu_ricecake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerInParent="true"
+            android:layout_alignTop="@+id/side_menu"
+            android:layout_marginTop="20dp"
+            android:maxHeight="125dp"
+            android:src="@drawable/interface_game_button"
+            android:onClick="setRiceCake"/>
+
+        <TextView
+            android:id="@+id/price_ricacake"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/menu_ricecake"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/interface_game_button_display"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:text="PRICE"
+            android:textColor="#e18040"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerInParent="true"
+            android:layout_alignBottom="@+id/menu_ricecake"
+            android:layout_marginBottom="35dp"
+            android:maxHeight="80dp"
+            android:src="@drawable/menu_ricecake" />
+
+        <ImageView
+            android:id="@+id/menu_sausage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerInParent="true"
+            android:layout_alignBottom="@+id/side_menu"
+            android:layout_marginBottom="20dp"
+            android:maxHeight="125dp"
+            android:src="@drawable/interface_game_button"
+            android:onClick="setSausage"/>
+
+        <TextView
+            android:id="@+id/price_sausage"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/menu_sausage"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/interface_game_button_display"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:text="PRICE"
+            android:textColor="#e18040"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerInParent="true"
+            android:layout_alignBottom="@+id/menu_sausage"
+            android:layout_marginBottom="35dp"
+            android:maxHeight="80dp"
+            android:src="@drawable/menu_sausage" />
+    </RelativeLayout>
+
+     <!--게임 창 인터페이스 (우, SAUCE) -->
+    <RelativeLayout
+        android:id="@+id/InterfaceGame_Side_Right"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceLower"
+        app:layout_constraintTop_toTopOf="@+id/InterfaceGame"
+        app:layout_constraintEnd_toEndOf="@+id/InterfaceGame">
+
+        <ImageView
+            android:id="@+id/side_sauce"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/interface_game_side" />
+
+        <ImageView
+            android:id="@+id/sauce_ketchup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerInParent="true"
+            android:layout_alignTop="@+id/side_sauce"
+            android:layout_marginTop="20dp"
+            android:maxHeight="125dp"
+            android:src="@drawable/interface_game_button"
+            android:onClick="setKetchup"/>
+
+        <TextView
+            android:id="@+id/price_ketchup"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/sauce_ketchup"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/interface_game_button_display"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:text="PRICE"
+            android:textColor="#e18040"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerInParent="true"
+            android:layout_alignBottom="@+id/sauce_ketchup"
+            android:layout_marginBottom="35dp"
+            android:maxHeight="80dp"
+            android:src="@drawable/sauce_ketchup" />
+
+        <ImageView
+            android:id="@+id/sauce_mustard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerInParent="true"
+            android:layout_alignBottom="@+id/side_sauce"
+            android:layout_marginBottom="20dp"
+            android:maxHeight="125dp"
+            android:src="@drawable/interface_game_button"
+            android:onClick="setMustard"/>
+
+        <TextView
+            android:id="@+id/price_mustard"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/sauce_mustard"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/interface_game_button_display"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:text="PRICE"
+            android:textColor="#e18040"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerInParent="true"
+            android:layout_alignBottom="@+id/sauce_mustard"
+            android:layout_marginBottom="35dp"
+            android:maxHeight="80dp"
+            android:src="@drawable/sauce_mustard" />
+    </RelativeLayout>
+
+    <!-- 상단바 인터페이스 -->
+    <TableLayout
+        android:id="@+id/InterfaceUpper"
+        android:layout_width="match_parent"
+        android:layout_height="35dp">
+        <TableRow>
+            <RelativeLayout
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/text_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@drawable/interface_upper"
+                    android:fontFamily="@font/cybersomething"
+                    android:textColor="#e18040"
+                    android:textSize="16dp"
+                    android:text="Score"/>
+
+                <ImageView
+                    android:id="@+id/icon_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_centerVertical="true"
+                    android:maxHeight="20dp"
+                    android:paddingLeft="10dp"
+                    app:srcCompat="@drawable/interface_score" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/text_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@drawable/interface_upper"
+                    android:fontFamily="@font/cybersomething"
+                    android:textColor="#e18040"
+                    android:textSize="16dp"
+                    android:text="Time"/>
+
+                <ImageView
+                    android:id="@+id/icon_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_centerVertical="true"
+                    android:maxHeight="20dp"
+                    android:paddingLeft="10dp"
+                    app:srcCompat="@drawable/interface_time" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="1">
+            <TextView
+                android:id="@+id/text_reputation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/interface_upper"
+                android:fontFamily="@font/cybersomething"
+                android:textColor="#e18040"
+                android:textSize="16dp"
+                android:text="Reputation"/>
+
+                <ImageView
+                    android:id="@+id/icon_reputation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_centerVertical="true"
+                    android:maxHeight="20dp"
+                    android:paddingLeft="10dp"
+                    app:srcCompat="@drawable/interface_reputation" />
+            </RelativeLayout>
+        </TableRow>
+    </TableLayout>
+
+    <!-- 하단바 인터페이스 -->
+    <TableLayout
+        android:id="@+id/InterfaceLower"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TableRow>
+            <TextView
+                android:id="@+id/Button_Menu"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/interface_lower"
+                android:fontFamily="@font/cybersomething"
+                android:textColor="#e18040"
+                android:textSize="20dp"
+                android:text="MENU"
+                android:onClick="toMenu"/>
+
+            <TextView
+                android:id="@+id/Button_Exit"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/interface_lower"
+                android:fontFamily="@font/cybersomething"
+                android:textColor="#e18040"
+                android:textSize="20dp"
+                android:text="EXIT"
+                android:onClick="toTitle"/>
+
+            <TextView
+                android:id="@+id/Button_Sauce"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/interface_lower"
+                android:fontFamily="@font/cybersomething"
+                android:textColor="#e18040"
+                android:textSize="20dp"
+                android:text="SAUCE"
+                android:onClick="toSauce"/>
+        </TableRow>
+    </TableLayout>
+
+    <!-- 게임 오버 창 -->
+    <RelativeLayout
+        android:id="@+id/Gameover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/Gameover_Background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/gameover_shutter"/>
+
+        <TextView
+            android:id="@+id/Gameover_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="GAME OVER!"
+            android:background="#99000000"
+            android:textColor="#e18040"
+            android:textSize="60dp" />
+
+        <TextView
+            android:id="@+id/Gameover_Score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Gameover_Text"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/interface_upper"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:text="SCORE: 00000000"
+            android:textColor="#e18040"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/Gameover_Exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/Gameover_Background"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/interface_lower"
+            android:fontFamily="@font/cybersomething"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:text="RETRY"
+            android:textColor="#e18040"
+            android:textSize="36dp"
+            android:onClick="Gameover_toTitle" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

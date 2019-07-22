@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#052c46"
+    android:id="@+id/GameLayout"
+    tools:context=".MainActivity"
+    tools:ignore="MissingConstraints">
+
+    <!-- 배경 -->
+    <FrameLayout
+        android:id="@+id/BackgroundLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/LayerFar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:adjustViewBounds="true"
+            android:paddingBottom="60dp"
+            app:srcCompat="@drawable/layer_far_buildings" />
+
+        <ImageView
+            android:id="@+id/LayerBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:adjustViewBounds="true"
+            android:paddingBottom="20dp"
+            app:srcCompat="@drawable/layer_back_buildings" />
+
+        <ImageView
+            android:id="@+id/LayerForeground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:adjustViewBounds="true"
+            android:paddingLeft="-1dp"
+            android:paddingRight="-1dp"
+            app:srcCompat="@drawable/layer_foreground" />
+    </FrameLayout>
+
+    <!-- 게임 창 -->
+    <ImageView
+        android:id="@+id/InterfaceGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:adjustViewBounds="true"
+        android:background="#2a1723"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@android:color/transparent" />
+
+    <!-- 타이틀 이미지 -->
+    <ImageView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/title"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        app:layout_constraintBottom_toTopOf="@+id/InterfaceGame"
+        app:layout_constraintEnd_toEndOf="@+id/BackgroundLayout"
+        app:layout_constraintStart_toStartOf="@+id/BackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 하단바 인터페이스 -->
+    <TextView
+        android:id="@+id/main_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/interface_lower"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="START"
+        android:textColor="#e18040"
+        android:textSize="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/InterfaceGame"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/InterfaceGame" />
+
+    <TextView
+        android:id="@+id/main_how"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/interface_lower"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="HOW TO PLAY"
+        android:textColor="#e18040"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/InterfaceGame"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/InterfaceGame" />
+
+    <TextView
+        android:id="@+id/main_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/interface_lower"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="EXIT"
+        android:textColor="#e18040"
+        android:textSize="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/InterfaceGame"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/InterfaceGame"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/cybersomething"
+        android:gravity="center"
+        android:text="WOO BYEONG KUK"
+        android:textColor="#e18040"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/InterfaceGame"
+        app:layout_constraintEnd_toEndOf="@+id/InterfaceGame" />
+
+</android.support.constraint.ConstraintLayout>
